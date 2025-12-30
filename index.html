@@ -42,11 +42,19 @@
   <main>
     <!-- Replace logo.png with your actual logo filename, or put your file next to this HTML named exactly logo.png -->
     <img src="assets/E911News-Logo.png" alt="E911 News LLC" />
-    <p>3720 Chattanooga Valley Road</p>
-    <p>Flintstone, Georgia 30725-2462 USA</p>
-    <p>Alerts@E911News.com</p>
-    <p>706.820.5500 Voice/Text</p>
+
+    <p class="sub" style="margin-top:12px; color: red; text-align: center; font-size: x-large;">
+      If you are in immediate danger or need emergency assistance, dial <b>911</b>.
+    </p>
+    <br />
+    <footer>
+      <div style="font-size: xx-small; color: white;">© <span id="yr"></span>&nbsp;&nbsp;E911 News LLC</div>
+    </footer>
   </main>
+  <script>
+    // Set footer year
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
 </body>
 
 </html>
