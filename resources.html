@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Records & Resources | E911 News LLC</title>
+    <meta name="description" content="Open records and newsgathering resources for Georgia public safety reporting." />
+    <link rel="icon" href="./assets/img/E911News-Logo.png" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="./index.html">
+                <img src="./assets/img/E911News-Logo.png" alt="E911 News LLC logo" class="brand-logo" />
+                <div class="brand-text">
+                    <span class="brand-name">E911 News LLC</span>
+                    <span class="brand-tagline">Broadcasting Safety. Amplifying Awareness.</span>
+                </div>
+            </a>
+
+            <nav class="nav" aria-label="Primary navigation">
+                <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="navMenu">
+                    <span class="sr-only">Toggle navigation</span><span aria-hidden="true">Menu</span>
+                </button>
+                <div id="navMenu" class="nav-menu" data-nav-menu>
+                    <a href="./investigations.html">Investigations</a>
+                    <a class="active" href="./resources.html">Records & Resources</a>
+                    <a href="./about.html">About</a>
+                    <a class="btn btn-small" href="./contact.html">Send a Tip</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="banner" role="note" aria-label="Emergency notice">
+            <div class="container banner-inner">
+                <strong>Emergency:</strong>
+                <span>If you are in immediate danger or need emergency assistance, dial <strong>911</strong>.</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="page">
+        <div class="container">
+            <header class="page-header">
+                <h1>Records & Resources</h1>
+                <p class="muted">
+                    Practical tools for records-based reporting: request drafting, tracking, and public safety data
+                    hygiene.
+                    (Add official links/policies you rely on; keep this page current.)
+                </p>
+            </header>
+
+            <div class="cards">
+                <article class="card">
+                    <h2>Georgia Open Records Requests</h2>
+                    <p>Build narrowly scoped requests: define date ranges, systems, incident numbers, and retention
+                        policies.</p>
+                    <ul class="bullets">
+                        <li>Ask for <strong>CAD</strong>, <strong>911 audio</strong>, <strong>radio traffic</strong>,
+                            and <strong>dispatch logs</strong>.</li>
+                        <li>Request <strong>policies/procedures</strong>, staffing rosters, training records, and vendor
+                            contracts.</li>
+                        <li>Ask for export formats (CSV, WAV) and metadata fields.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h2>Suggested Request Language</h2>
+                    <p>Use clear, testable language that reduces ambiguity and accelerates compliance.</p>
+                    <pre class="code-block"><code>All 911 audio recordings and CAD entries for calls
+classified as “Structure Fire” between 2025-01-01 and 2025-03-31,
+including incident numbers, unit response times, disposition codes,
+and any associated radio communications recordings.</code></pre>
+                </article>
+
+                <article class="card">
+                    <h2>Source Protection</h2>
+                    <p>Operational security basics: minimize identifiers, separate accounts, avoid employer
+                        networks/devices.</p>
+                    <ul class="bullets">
+                        <li>Consider a dedicated device/account for sensitive communications.</li>
+                        <li>Prefer encrypted channels where lawful and appropriate.</li>
+                        <li>Document chain-of-custody when evidence is provided.</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h2>Data Checklist</h2>
+                    <p>When publishing incident timelines, standardize fields and keep an audit trail.</p>
+                    <ul class="bullets">
+                        <li>Time zone normalization</li>
+                        <li>Unit identifiers + dispatch/arrival/clear times</li>
+                        <li>Redactions log and legal basis</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>E911 News LLC</strong>
+                <p class="muted">Investigative reporting on public safety and accountability.</p>
+            </div>
+            <div class="footer-links">
+                <a href="./about.html">About</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./resources.html">Records</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <small>© <span id="year"></span> E911 News LLC. All rights reserved.</small>
+        </div>
+    </footer>
+</body>
+
+</html>

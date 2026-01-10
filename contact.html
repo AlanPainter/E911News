@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Send a Tip | E911 News LLC</title>
+    <meta name="description" content="Contact E911 News LLC and submit a tip." />
+    <link rel="icon" href="./assets/img/E911News-Logo.png" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="./index.html">
+                <img src="./assets/img/E911News-Logo.png" alt="E911 News LLC logo" class="brand-logo" />
+                <div class="brand-text">
+                    <span class="brand-name">E911 News LLC</span>
+                    <span class="brand-tagline">Broadcasting Safety. Amplifying Awareness.</span>
+                </div>
+            </a>
+
+            <nav class="nav" aria-label="Primary navigation">
+                <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="navMenu">
+                    <span class="sr-only">Toggle navigation</span><span aria-hidden="true">Menu</span>
+                </button>
+                <div id="navMenu" class="nav-menu" data-nav-menu>
+                    <a href="./investigations.html">Investigations</a>
+                    <a href="./resources.html">Records & Resources</a>
+                    <a href="./about.html">About</a>
+                    <a class="active btn btn-small" href="./contact.html">Send a Tip</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="banner" role="note" aria-label="Emergency notice">
+            <div class="container banner-inner">
+                <strong>Emergency:</strong>
+                <span>If you are in immediate danger or need emergency assistance, dial <strong>911</strong>.</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="page">
+        <div class="container">
+            <header class="page-header">
+                <h1>Send a Tip</h1>
+                <p class="muted">If you have documents, timelines, or firsthand knowledge relevant to public safety or
+                    accountability, contact us.</p>
+            </header>
+
+            <div class="grid-2">
+                <section class="card">
+                    <h2>Direct contact</h2>
+                    <p><strong>Voice/Text:</strong> <a href="tel:+17068205500">+1 706.820.5500</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:I-Team@E911News.com">I-Team@E911News.com</a></p>
+                    <hr />
+                    <h3>Secure tip guidance</h3>
+                    <ul class="bullets">
+                        <li>If your tip is sensitive, avoid work devices and work email.</li>
+                        <li>Use a personal device on a trusted network when possible.</li>
+                        <li>Write down key details: who/what/when/where, and what records exist.</li>
+                    </ul>
+                    <p class="fineprint muted">
+                        Note: Do not send information that you are legally prohibited from sharing. When in doubt,
+                        describe what exists
+                        and how it can be lawfully obtained.
+                    </p>
+                </section>
+
+                <section class="card">
+                    <h2>Tip form</h2>
+                    <p class="muted">Static-site form note: this form requires a backend provider (e.g., Netlify Forms
+                        or Formspree). Otherwise it will not submit.</p>
+
+                    <!-- Example: Netlify Forms (works if deployed via Netlify) -->
+                    <form name="tips" method="POST" data-netlify="true">
+                        <label class="field">
+                            <span>Name (optional)</span>
+                            <input name="name" type="text" autocomplete="name" />
+                        </label>
+
+                        <label class="field">
+                            <span>Contact (email or phone)</span>
+                            <input name="contact" type="text" required />
+                        </label>
+
+                        <label class="field">
+                            <span>Tip summary</span>
+                            <textarea name="summary" rows="7" required
+                                placeholder="Provide a brief summary, dates, locations, and agencies involved."></textarea>
+                        </label>
+
+                        <label class="field checkbox">
+                            <input name="anonymous_ok" type="checkbox" />
+                            <span>I’m comfortable being contacted to verify details.</span>
+                        </label>
+
+                        <button class="btn" type="submit">Submit tip</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>E911 News LLC</strong>
+                <p class="sub" style="margin-top:12px; color: red; text-align: center; font-size: x-large;">
+                    <strong>Emergency:</strong> If you are in immediate danger or need emergency assistance, dial
+                    <b>911</b>.
+                </p>
+            </div>
+            <!-- <div class="footer-links">
+                <a href="./about.html">About</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./resources.html">Records</a>
+            </div> -->
+        </div>
+        <div class="container footer-bottom">
+            <small>© <span id="year"></span> E911 News LLC. All rights reserved.</small>
+        </div>
+    </footer>
+</body>
+
+</html>

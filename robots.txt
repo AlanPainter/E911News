@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alanpainter.github.io/E911News/sitemap.xml

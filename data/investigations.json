@@ -1,0 +1,34 @@
+[
+    {
+        "date": "2025-12-31",
+        "status": "Ongoing",
+        "title": "911 Call Handling: Staffing, Overtime, and Missed Calls",
+        "summary": "Tracking staffing levels, overtime patterns, and call-answer performance. Publishing verified timelines and records where available.",
+        "county": "Georgia (multi-county)",
+        "agency": "E911 / Dispatch",
+        "topics": [
+            "911 & Dispatch",
+            "Staffing",
+            "Accountability"
+        ],
+        "links": [
+            {
+                "label": "Request Records Checklist",
+                "href": "./resources.html"
+            }
+        ]
+    },
+    {
+        "date": "2025-12-20",
+        "status": "Open",
+        "title": "EMS Response Gaps and Mutual Aid Coverage",
+        "summary": "Reviewing coverage maps, unit-hour utilization, and mutual aid agreements tied to extended response times.",
+        "county": "Georgia",
+        "agency": "Fire/EMS",
+        "topics": [
+            "Fire/EMS",
+            "Response Times"
+        ],
+        "links": []
+    }
+]

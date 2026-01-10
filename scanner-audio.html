@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Scanner Audio | E911 News LLC</title>
+    <meta name="description" content="Live scanner audio feeds curated by E911 News LLC." />
+
+    <link rel="icon" href="./assets/img/E911News-Logo.png" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+
+    <style>
+        /* Page-specific refinements without changing your global stylesheet */
+        .center-wrap {
+            min-height: calc(100vh - 160px);
+            display: grid;
+            place-items: center;
+            padding: 28px 0 46px;
+        }
+
+        .scanner-card {
+            width: min(760px, 100%);
+            background: rgba(16, 24, 36, .55);
+            border: 1px solid rgba(34, 50, 70, .65);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+        }
+
+        .scanner-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+
+        .scanner-head h1 {
+            margin: 0;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            line-height: 1.15;
+        }
+
+        .scanner-head p {
+            margin: 8px 0 0;
+            color: var(--muted);
+            max-width: 52ch;
+        }
+
+        .scanner-controls {
+            display: grid;
+            gap: 10px;
+            margin: 14px 0 16px;
+        }
+
+        .select-row {
+            display: flex;
+            gap: 12px;
+            align-items: end;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* Center the dropdown row */
+        }
+
+        .select-row .field {
+            width: min(520px, 100%);
+        }
+
+        .player-wrap {
+            display: grid;
+            gap: 10px;
+            justify-items: center;
+            padding-top: 6px;
+        }
+
+        .player-title {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 14px;
+            border: 1px solid rgba(34, 50, 70, .65);
+            background: rgba(11, 15, 20, .35);
+        }
+
+        .player-title strong {
+            font-size: 1rem;
+        }
+
+        .hint {
+            color: var(--muted);
+            font-size: .9rem;
+        }
+
+        .frame-shell {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Responsive iframe: keep your desired dimensions but allow shrinking on mobile */
+        .frame-shell iframe {
+            width: min(325px, 100%);
+            height: 245px;
+            border: 0;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .placeholder {
+            width: 100%;
+            border: 1px dashed rgba(34, 50, 70, .9);
+            border-radius: 14px;
+            padding: 14px;
+            background: rgba(11, 15, 20, .25);
+            color: var(--accent2);
+        }
+
+        .kbd {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(34, 50, 70, .75);
+            background: rgba(11, 15, 20, .5);
+            color: var(--text);
+            font-size: .85rem;
+            white-space: nowrap;
+        }
+    </style>
+
+    <script defer src="./assets/js/main.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="./index.html" aria-label="E911 News home">
+                <img src="./assets/img/E911News-Logo.png" alt="E911 News LLC logo" class="brand-logo" />
+                <div class="brand-text">
+                    <span class="brand-name">E911 News LLC</span>
+                    <span class="brand-tagline">Broadcasting Safety. Amplifying Awareness.</span>
+                </div>
+            </a>
+
+            <nav class="nav" aria-label="Primary navigation">
+                <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="navMenu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span aria-hidden="true">Menu</span>
+                </button>
+                <div id="navMenu" class="nav-menu" data-nav-menu>
+                    <a href="./investigations.html">Investigations</a>
+                    <a href="./resources.html">Records & Resources</a>
+                    <a href="./about.html">About</a>
+                    <a class="active" href="./scanner-audio.html">Scanner Audio</a>
+                    <a class="btn btn-small" href="./contact.html">Send a Tip</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- <div class="banner" role="note" aria-label="Emergency notice">
+            <div class="container banner-inner">
+                <strong>Emergency:</strong>
+                <span>If you are in immediate danger or need emergency assistance, dial <strong>911</strong>.</span>
+            </div>
+        </div> -->
+    </header>
+
+    <main id="main">
+        <div class="center-wrap">
+            <div class="scanner-card">
+                <div class="scanner-head">
+                    <div>
+                        <h1>Public Safety Audio Stream</h1>
+                        <!-- <p>
+                            Select a public safety feed to listen live. For best results, use a stable connection and
+                            keep the player open in a single tab.
+                        </p> -->
+                    </div>
+                </div>
+
+                <section class="scanner-controls" aria-label="Scanner audio selection">
+                    <div class="select-row">
+                        <label class="field" for="feedSelect">
+                            <span>Choose a feed</span>
+                            <select id="feedSelect">
+                                <option value="chattanooga-airport">Chattanooga Airport Public Safety</option>
+                                <option value="east-ridge">East Ridge Public Safety</option>
+                                <option value="chattanooga">Chattanooga Public Safety</option>
+                                <option value="walker">Walker County Public Safety</option>
+                                <option value="dade">Dade County Public Safety</option>
+                                <option value="all">All scanner feeds provided by E911 News LLC</option>
+                            </select>
+                        </label>
+                    </div>
+                    <!-- <div class="hint" style="text-align:center;">
+                        Tip: use <span class="kbd">Tab</span> then <span class="kbd">Enter</span> to switch feeds with
+                        the keyboard.
+                    </div> -->
+                </section>
+
+                <section class="player-wrap" aria-label="Selected scanner audio player">
+                    <div class="player-title">
+                        <strong id="playerTitle">Chattanooga Airport Public Safety</strong>
+                        <span class="hint" id="playerNote">Embedded player</span>
+                    </div>
+
+                    <div class="frame-shell" id="playerHost">
+                        <!-- Default: Chattanooga Airport Public Safety -->
+                        <iframe title="Chattanooga Airport Public Safety" width="325px" height="245px" loading="lazy"
+                            referrerpolicy="no-referrer"
+                            sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                            src="https://api.broadcastify.com/embed/player/?key=9937fcb0-e687-11f0-bb32-0ef97433b5f9&feedId=45812&html5=1&stats=1&as=1&bg=000000&fg=FFFFFF">
+                            Your browser does not support iFrames.
+                        </iframe>
+                    </div>
+                </section>
+
+                <p class="fineprint" style="margin:14px 0 0;">
+                    If audio does not load, your browser may be blocking third-party embeds. Try disabling strict
+                    tracking protection for this page.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>E911 News LLC</strong>
+                <p class="muted">Investigative reporting on public safety and accountability.</p>
+            </div>
+            <div class="footer-links">
+                <a href="./about.html">About</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./resources.html">Records</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <small>© <span id="year"></span> E911 News LLC. All rights reserved.</small>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const feeds = {
+                "chattanooga-airport": {
+                    title: "Chattanooga Airport Public Safety",
+                    iframe: `<iframe
+              title="Chattanooga Airport Public Safety"
+              width="325px"
+              height="245px"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              src="https://api.broadcastify.com/embed/player/?key=9937fcb0-e687-11f0-bb32-0ef97433b5f9&feedId=45812&html5=1&stats=1&as=1&bg=000000&fg=FFFFFF">
+              Your browser does not support iFrames.
+            </iframe>`
+                },
+                "east-ridge": {
+                    title: "East Ridge Public Safety",
+                    iframe: `<iframe
+              title="East Ridge Public Safety"
+              width="325px"
+              height="245px"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              src="https://api.broadcastify.com/embed/player/?key=6e51b32f-e687-11f0-bb32-0ef97433b5f9&feedId=45601&html5=1&stats=1&as=1&bg=000000&fg=FFFFFF">
+              Your browser does not support iFrames.
+            </iframe>`
+                },
+                "chattanooga": {
+                    title: "Chattanooga Public Safety",
+                    iframe: `<iframe
+              title="Chattanooga Public Safety"
+              width="325px"
+                    height="245px"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              src="https://api.broadcastify.com/embed/player/?key=545f6e5a-e687-11f0-bb32-0ef97433b5f9&feedId=45709&html5=1&stats=1&as=1&bg=000000&fg=FFFFFF">
+              Your browser does not support iFrames.
+            </iframe>`
+                },
+                "walker": {
+                    title: "Walker County Public Safety",
+                    iframe: `<iframe
+              title="Walker County Public Safety"
+              width="325px"
+              height="245px"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              src="https://api.broadcastify.com/embed/player/?key=33800401&feedId=19260&html5=1&stats=1&as=1&bg=000000&fg=FFFFFF">
+              Your browser does not support iFrames.
+            </iframe>`
+                },
+                "dade": {
+                    title: "Dade County Public Safety",
+                    iframe: `<iframe
+              title="Dade County Public Safety"
+              width="325px"
+              height="245px"
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+              src="https://api.broadcastify.com/embed/player/?key=88175474&feedId=19288&html5=1&stats=1&as=1&bg=000000&fg=FFFFFF">
+              Your browser does not support iFrames.
+            </iframe>`
+                }
+            };
+
+            const select = document.getElementById("feedSelect");
+            const title = document.getElementById("playerTitle");
+            const host = document.getElementById("playerHost");
+            const note = document.getElementById("playerNote");
+
+            function setFeed(key) {
+                const feed = feeds[key] || feeds["chattanooga-airport"];
+                title.textContent = feed.title;
+                host.innerHTML = feed.iframe;
+
+                // Minor UI cue
+                note.textContent = feed.iframe.includes("<iframe") ? "Embedded player" : "Feed pending";
+            }
+
+            // Default matches the first option
+            setFeed(select.value);
+
+            select.addEventListener("change", () => setFeed(select.value));
+        })();
+    </script>
+</body>
+
+</html>

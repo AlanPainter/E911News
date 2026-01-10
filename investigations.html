@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Investigations | E911 News LLC</title>
+    <meta name="description" content="Investigations and reporting by E911 News LLC." />
+    <link rel="icon" href="./assets/img/E911News-Logo.png" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <script defer src="./assets/js/main.js"></script>
+    <script defer src="./assets/js/investigations.js"></script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="./index.html" aria-label="E911 News home">
+                <img src="./assets/img/E911News-Logo.png" alt="E911 News LLC logo" class="brand-logo" />
+                <div class="brand-text">
+                    <span class="brand-name">E911 News LLC</span>
+                    <span class="brand-tagline">Broadcasting Safety. Amplifying Awareness.</span>
+                </div>
+            </a>
+
+            <nav class="nav" aria-label="Primary navigation">
+                <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="navMenu">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span aria-hidden="true">Menu</span>
+                </button>
+                <div id="navMenu" class="nav-menu" data-nav-menu>
+                    <a class="active" href="./investigations.html">Investigations</a>
+                    <a href="./resources.html">Records & Resources</a>
+                    <a href="./about.html">About</a>
+                    <a class="btn btn-small" href="./contact.html">Send a Tip</a>
+                </div>
+            </nav>
+        </div>
+
+        <div class="banner" role="note" aria-label="Emergency notice">
+            <div class="container banner-inner">
+                <strong>Emergency:</strong>
+                <span>If you are in immediate danger or need emergency assistance, dial <strong>911</strong>.</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="main" class="page">
+        <div class="container">
+            <header class="page-header">
+                <h1>Investigations</h1>
+                <p class="muted">Filter by topic, agency, or county. All content below is driven from
+                    <code>/data/investigations.json</code>.</p>
+            </header>
+
+            <section class="filters" aria-label="Investigation filters">
+                <label class="field">
+                    <span>Search</span>
+                    <input id="q" type="search" placeholder="e.g., 911 staffing, EMS, warrants…" autocomplete="off" />
+                </label>
+
+                <label class="field">
+                    <span>Topic</span>
+                    <select id="topic">
+                        <option value="">All</option>
+                    </select>
+                </label>
+
+                <label class="field">
+                    <span>Status</span>
+                    <select id="status">
+                        <option value="">All</option>
+                        <option value="Open">Open</option>
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Published">Published</option>
+                    </select>
+                </label>
+
+                <button class="btn btn-ghost" type="button" id="reset">Reset</button>
+            </section>
+
+            <section aria-label="Investigation results">
+                <div id="results" class="stack" aria-live="polite"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <strong>E911 News LLC</strong>
+                <p class="muted">Investigative reporting on public safety and accountability.</p>
+            </div>
+            <div class="footer-links">
+                <a href="./about.html">About</a>
+                <a href="./contact.html">Contact</a>
+                <a href="./resources.html">Records</a>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <small>© <span id="year"></span> E911 News LLC. All rights reserved.</small>
+        </div>
+    </footer>
+</body>
+
+</html>
