@@ -1,0 +1,159 @@
+<section class="scanner-audio">
+    <div class="scanner-card">
+        <h2>Live Public Safety Audio</h2>
+        <p>Select a feed to load the Broadcastify player.</p>
+
+        <label for="feedSelect" class="sr-only">Choose a feed</label>
+        <select id="feedSelect" class="feed-select">
+            <option value="" selected disabled>-- Choose a stream --</option>
+            <option value="https://www.broadcastify.com/webPlayer/45812">Chattanooga Airport Public Safety</option>
+            <option value="https://www.broadcastify.com/webPlayer/45709">Chattanooga Public Safety</option>
+            <option value="http://audio3.broadcastify.com/437632954">Dade County Public Safety</option>
+            <option value="">East Ridge Public Safety</option>
+            <option value="http://audio3.broadcastify.com/478918301">Walker County Public Safety</option>
+        </select>
+
+        <div class="player-wrap">
+            <iframe id="playerFrame" title="Broadcastify Player" loading="lazy" referrerpolicy="no-referrer"
+                allow="autoplay"></iframe>
+        </div>
+
+        <div class="player-actions">
+            <a id="openLink" href="#" target="_blank" rel="noopener noreferrer" class="open-link" aria-disabled="true">
+                Open selected feed in a new tab
+            </a>
+            <span id="statusMsg" class="status-msg">No feed selected.</span>
+        </div>
+    </div>
+</section>
+
+<style>
+    .scanner-audio {
+        padding: 24px;
+        display: flex;
+        justify-content: center;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    .scanner-card {
+        width: min(920px, 100%);
+        border: 1px solid #e5e7eb;
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+        background: #fff;
+    }
+
+    .scanner-card h2 {
+        margin: 0 0 6px 0;
+        font-size: 1.25rem;
+    }
+
+    .scanner-card p {
+        margin: 0 0 14px 0;
+        color: #4b5563;
+    }
+
+    .feed-select {
+        width: 100%;
+        padding: 12px 12px;
+        border-radius: 10px;
+        border: 1px solid #d1d5db;
+        font-size: 1rem;
+        background: #fff;
+    }
+
+    .player-wrap {
+        margin-top: 14px;
+        border-radius: 12px;
+        overflow: hidden;
+        border: 1px solid #e5e7eb;
+        background: #f9fafb;
+    }
+
+    #playerFrame {
+        width: 100%;
+        height: 520px;
+        border: 0;
+        background: #f9fafb;
+    }
+
+    .player-actions {
+        margin-top: 10px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .open-link {
+        display: inline-block;
+        padding: 10px 12px;
+        border-radius: 10px;
+        border: 1px solid #d1d5db;
+        text-decoration: none;
+        color: #111827;
+        background: #fff;
+    }
+
+    .open-link[aria-disabled="true"] {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+
+    .status-msg {
+        color: #6b7280;
+        font-size: 0.95rem;
+    }
+
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+</style>
+
+<script>
+    (function () {
+        const feedSelect = document.getElementById("feedSelect");
+        const playerFrame = document.getElementById("playerFrame");
+        const openLink = document.getElementById("openLink");
+        const statusMsg = document.getElementById("statusMsg");
+
+        function setDisabledLink(disabled) {
+            openLink.setAttribute("aria-disabled", disabled ? "true" : "false");
+            if (disabled) openLink.href = "#";
+        }
+
+        feedSelect.addEventListener("change", () => {
+            const url = feedSelect.value;
+
+            if (!url) {
+                playerFrame.removeAttribute("src");
+                statusMsg.textContent = "No feed selected.";
+                setDisabledLink(true);
+                return;
+            }
+
+            // Load the Broadcastify web player page into the iframe
+            playerFrame.src = url;
+
+            // Update fallback link
+            openLink.href = url;
+            setDisabledLink(false);
+
+            // Status
+            const label = feedSelect.options[feedSelect.selectedIndex].text;
+            statusMsg.textContent = `Loaded: ${label}`;
+        });
+
+        // Initialize
+        setDisabledLink(true);
+    })();
+</script>

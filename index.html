@@ -166,67 +166,15 @@
           <li>Email: I-Team@E911News.com</li>
           <li>Phone: +1 706.820.5500 voice/text 24/7/365</li>
         </ul>
-
-        <!-- <div class="about-grid">
-          <div class="card">
-            <h3>Who we are</h3>
-            <ul class="checklist">
-              <li>We are: small, independent, FOIA-driven investigative organization</li>
-              <li>Our mailing address: 3720 Chattanooga Valley Rd, Flintstone, GA 30725 USA</li>
-              <li>Our email: I-Team@E911News.com</li>
-              <li>Our phone: +1 706.956.9000 voice/text 24/7/365</li>
-            </ul>
-            <p>
-              E911 News LLC is an small, independent, FOIA-driven investigative organization focused on public
-              safety reporting, public
-              education, and local government transparency.<br />
-              We emphasize primary-source documentation, careful
-              verification, and clear,
-              accessible writing.
-            </p>
-
-            <p class="muted">
-              Note: This website template is ready to deploy; update your contact details, social links, and any
-              disclaimers to match your operations.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>What we publish</h3>
-            <ul class="bullets">
-              <li>We emphasize primary-source documentation</li>
-              <li>Breaking updates with verification</li>
-              <li>Document-backed investigations</li>
-              <li>Careful verification</li>
-              <li>Explainers, FAQs, and guides for the public</li>
-              <li>Records-request trackers and summaries</li>
-            </ul>
-          </div>
-
-          <div class="card">
-            <h3>Affiliation</h3>
-            <p>
-              Proud member of the Georgia First Amendment Foundation (GFAF), which supports open government and press
-              freedoms.
-              <a href="https://www.gfaf.org" target="_blank" rel="noopener noreferrer">gfaf.org</a>
-            </p>
-          </div>
-        </div> -->
       </div>
     </section>
 
-
-    <div class="scanner-card" id="scanner-audio">
+    <!-- <div class="scanner-card" id="scanner-audio">
       <div class="scanner-head">
         <div>
           <h1>Public Safety Audio Stream</h1>
-          <!-- <p>
-                            Select a public safety feed to listen live. For best results, use a stable connection and
-                            keep the player open in a single tab.
-                        </p> -->
         </div>
       </div>
-
       <section class="scanner-controls" aria-label="Scanner audio selection">
         <div class="select-row">
           <label class="field" for="feedSelect">
@@ -237,13 +185,11 @@
               <option value="chattanooga">Chattanooga Public Safety</option>
               <option value="walker">Walker County Public Safety</option>
               <option value="dade">Dade County Public Safety</option>
-              <option value="all">All scanner feeds provided by E911 News LLC</option>
             </select>
           </label>
         </div>
       </section>
-
-    </div>
+    </div> -->
 
     <section class="player-wrap" aria-label="Selected scanner audio player">
       <!-- <div class="frame-shell" id="playerHost">
@@ -254,25 +200,9 @@
         </iframe>
       </div> -->
 
-
       <div class="center-wrap">
         <div class="scanner-card">
-          <!-- <section class="scanner-controls" aria-label="Scanner audio selection">
-            <div class="select-row">
-              <label class="field" for="feedSelect">
-                <span>Choose a feed</span>
-                <select id="feedSelect">
-                  <option value="chattanooga-airport">Chattanooga Airport Public Safety</option>
-                  <option value="east-ridge">East Ridge Public Safety</option>
-                  <option value="chattanooga">Chattanooga Public Safety</option>
-                  <option value="walker">Walker County Public Safety</option>
-                  <option value="dade">Dade County Public Safety</option>
-                </select>
-              </label>
-            </div>
-          </section> -->
-
-          <!-- <section class="player-wrap" aria-label="Selected scanner audio player">
+          <section class="player-wrap" aria-label="Selected scanner audio player">
             <div class="frame-shell" id="playerHost">
               <iframe title="Chattanooga Airport Public Safety" width="325px" height="245px" loading="lazy"
                 referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
@@ -280,7 +210,7 @@
                 Your browser does not support iFrames.
               </iframe>
             </div>
-          </section> -->
+          </section>
         </div>
       </div>
     </section>
@@ -353,9 +283,7 @@
       </div>
     </footer>
   </main>
-
   <script src="script.js" defer></script>
-
   <script>
     (function () {
       const feeds = {
@@ -442,9 +370,9 @@
 
       // Default matches the first option
       setFeed(select.value);
-
       select.addEventListener("change", () => setFeed(select.value));
-    })();
+    })
+      ();
   </script>
 </body>
 
