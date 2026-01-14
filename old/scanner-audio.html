@@ -119,17 +119,6 @@
             background: rgba(11, 15, 20, .25);
             color: var(--accent2);
         }
-
-        .kbd {
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-            padding: 2px 8px;
-            border-radius: 999px;
-            border: 1px solid rgba(34, 50, 70, .75);
-            background: rgba(11, 15, 20, .5);
-            color: var(--text);
-            font-size: .85rem;
-            white-space: nowrap;
-        }
     </style>
 
     <script defer src="./assets/js/main.js"></script>
@@ -137,53 +126,9 @@
 
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
-
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="./index.html" aria-label="E911 News home">
-                <img src="./assets/img/E911News-Logo.png" alt="E911 News LLC logo" class="brand-logo" />
-                <div class="brand-text">
-                    <span class="brand-name">E911 News LLC</span>
-                    <span class="brand-tagline">Broadcasting Safety. Amplifying Awareness.</span>
-                </div>
-            </a>
-
-            <nav class="nav" aria-label="Primary navigation">
-                <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="navMenu">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span aria-hidden="true">Menu</span>
-                </button>
-                <div id="navMenu" class="nav-menu" data-nav-menu>
-                    <a href="./investigations.html">Investigations</a>
-                    <a href="./resources.html">Records & Resources</a>
-                    <a href="./about.html">About</a>
-                    <a class="active" href="./scanner-audio.html">Scanner Audio</a>
-                    <a class="btn btn-small" href="./contact.html">Send a Tip</a>
-                </div>
-            </nav>
-        </div>
-
-        <!-- <div class="banner" role="note" aria-label="Emergency notice">
-            <div class="container banner-inner">
-                <strong>Emergency:</strong>
-                <span>If you are in immediate danger or need emergency assistance, dial <strong>911</strong>.</span>
-            </div>
-        </div> -->
-    </header>
-
     <main id="main">
         <div class="center-wrap">
             <div class="scanner-card">
-                <div class="scanner-head">
-                    <div>
-                        <h1>Public Safety Audio Stream</h1>
-                        <!-- <p>
-                            Select a public safety feed to listen live. For best results, use a stable connection and
-                            keep the player open in a single tab.
-                        </p> -->
-                    </div>
-                </div>
-
                 <section class="scanner-controls" aria-label="Scanner audio selection">
                     <div class="select-row">
                         <label class="field" for="feedSelect">
@@ -194,24 +139,13 @@
                                 <option value="chattanooga">Chattanooga Public Safety</option>
                                 <option value="walker">Walker County Public Safety</option>
                                 <option value="dade">Dade County Public Safety</option>
-                                <option value="all">All scanner feeds provided by E911 News LLC</option>
                             </select>
                         </label>
                     </div>
-                    <!-- <div class="hint" style="text-align:center;">
-                        Tip: use <span class="kbd">Tab</span> then <span class="kbd">Enter</span> to switch feeds with
-                        the keyboard.
-                    </div> -->
                 </section>
 
                 <section class="player-wrap" aria-label="Selected scanner audio player">
-                    <div class="player-title">
-                        <strong id="playerTitle">Chattanooga Airport Public Safety</strong>
-                        <span class="hint" id="playerNote">Embedded player</span>
-                    </div>
-
                     <div class="frame-shell" id="playerHost">
-                        <!-- Default: Chattanooga Airport Public Safety -->
                         <iframe title="Chattanooga Airport Public Safety" width="325px" height="245px" loading="lazy"
                             referrerpolicy="no-referrer"
                             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
@@ -220,32 +154,9 @@
                         </iframe>
                     </div>
                 </section>
-
-                <p class="fineprint" style="margin:14px 0 0;">
-                    If audio does not load, your browser may be blocking third-party embeds. Try disabling strict
-                    tracking protection for this page.
-                </p>
             </div>
         </div>
     </main>
-
-    <!-- <footer class="site-footer">
-        <div class="container footer-inner">
-            <div>
-                <strong>E911 News LLC</strong>
-                <p class="muted">Investigative reporting on public safety and accountability.</p>
-            </div>
-            <div class="footer-links">
-                <a href="./about.html">About</a>
-                <a href="./contact.html">Contact</a>
-                <a href="./resources.html">Records</a>
-            </div>
-        </div>
-        <div class="container footer-bottom">
-            <small>© <span id="year"></span> E911 News LLC. All rights reserved.</small>
-        </div>
-    </footer> -->
-
     <script>
         (function () {
             const feeds = {

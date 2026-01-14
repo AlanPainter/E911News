@@ -241,28 +241,47 @@
             </select>
           </label>
         </div>
-        <!-- <div class="hint" style="text-align:center;">
-                        Tip: use <span class="kbd">Tab</span> then <span class="kbd">Enter</span> to switch feeds with
-                        the keyboard.
-                    </div> -->
       </section>
 
     </div>
 
-
-
     <section class="player-wrap" aria-label="Selected scanner audio player">
-      <!-- <div class="player-title">
-        <strong id="playerTitle">Chattanooga Airport Public Safety</strong>
-        <span class="hint" id="playerNote">Embedded player</span>
-      </div> -->
-
-      <div class="frame-shell" id="playerHost">
+      <!-- <div class="frame-shell" id="playerHost">
         <iframe title="Chattanooga Airport Public Safety" width="325px" height="245px" loading="lazy"
           referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
           src="https://api.broadcastify.com/embed/player/?key=9937fcb0-e687-11f0-bb32-0ef97433b5f9&feedId=45812&html5=1&stats=1&as=1&bg=000000&fg=FFFFFF">
           Your browser does not support iFrames.
         </iframe>
+      </div> -->
+
+
+      <div class="center-wrap">
+        <div class="scanner-card">
+          <!-- <section class="scanner-controls" aria-label="Scanner audio selection">
+            <div class="select-row">
+              <label class="field" for="feedSelect">
+                <span>Choose a feed</span>
+                <select id="feedSelect">
+                  <option value="chattanooga-airport">Chattanooga Airport Public Safety</option>
+                  <option value="east-ridge">East Ridge Public Safety</option>
+                  <option value="chattanooga">Chattanooga Public Safety</option>
+                  <option value="walker">Walker County Public Safety</option>
+                  <option value="dade">Dade County Public Safety</option>
+                </select>
+              </label>
+            </div>
+          </section> -->
+
+          <!-- <section class="player-wrap" aria-label="Selected scanner audio player">
+            <div class="frame-shell" id="playerHost">
+              <iframe title="Chattanooga Airport Public Safety" width="325px" height="245px" loading="lazy"
+                referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                src="https://api.broadcastify.com/embed/player/?key=9937fcb0-e687-11f0-bb32-0ef97433b5f9&feedId=45812&html5=1&stats=1&as=1&bg=000000&fg=FFFFFF">
+                Your browser does not support iFrames.
+              </iframe>
+            </div>
+          </section> -->
+        </div>
       </div>
     </section>
 
@@ -271,7 +290,7 @@
         <h2>Contact Us</h2>
         <p class="section-lead">
           Use the form below for tips, corrections, or FOIA/Open records-related leads.<br />
-          <span style="color:red">Do not submit emergency requests here ==> dial <b>911</b> instead</span>
+          <span style="color:red">Do <b>-NOT-</b> submit emergency requests here ==> dial <b>911</b> instead</span>
         </p>
 
         <div class="contact-grid">
@@ -311,44 +330,8 @@
               <p class="muted small">This form opens your email client with a prefilled message (no server required).
               </p>
             </div>
-
             <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
           </form>
-
-          <!-- <div class="card">
-            <h3>Preferred channels</h3>
-            <p class="muted">Update these placeholders with your live addresses.</p>
-
-            <div class="contact-list">
-              <div class="contact-item">
-                <span class="label">Email</span>
-                <span class="value"><a href="mailto:ITeam@E911News.com">ITeam@E911News.com</a></span>
-              </div>
-
-              <div class="contact-item">
-                <span class="label">Tips</span>
-                <span class="value"><a href="mailto:Tips@E911News.com">Tips@E911News.com</a></span>
-              </div>
-
-              <div class="contact-item">
-                <span class="label">Website</span>
-                <span class="value"><a href="#top">E911News.com</a></span>
-              </div>
-
-              <div class="contact-item">
-                <span class="label">Resources</span>
-                <span class="value"><a href="https://www.gfaf.org" target="_blank" rel="noopener noreferrer">Georgia
-                    First Amendment Foundation</a></span>
-              </div>
-            </div> -->
-
-          <!-- <hr class="sep" /> -->
-
-          <!-- <h3 class="mt">Quick disclaimer</h3>
-            <p class="small muted">
-              Nothing on this site is legal advice. For emergencies, call 911. For public records, contact the
-              appropriate agency.
-            </p> -->
         </div>
       </div>
       </div>
@@ -358,7 +341,6 @@
         If you are in immediate danger or need emergency assistance dial => <b>911</b>.
       </p>
     </section>
-
     <footer class="site-footer">
       <div class="container footer-inner">
         <p class="small muted">© <span id="year"></span> E911 News LLC - • - All rights
@@ -464,7 +446,6 @@
       select.addEventListener("change", () => setFeed(select.value));
     })();
   </script>
-
 </body>
 
 </html>
