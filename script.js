@@ -1,4 +1,4 @@
-(function(){
+(function () {
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.getElementById('site-nav');
   const year = document.getElementById('year');
@@ -7,7 +7,7 @@
 
   if (year) year.textContent = new Date().getFullYear();
 
-  if (navToggle && nav){
+  if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', String(isOpen));
@@ -16,7 +16,7 @@
     // Close nav after selecting a link (mobile)
     nav.addEventListener('click', (e) => {
       const target = e.target;
-      if (target && target.tagName === 'A' && nav.classList.contains('open')){
+      if (target && target.tagName === 'A' && nav.classList.contains('open')) {
         nav.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
       }
@@ -24,7 +24,7 @@
   }
 
   // Contact form: no backend; open mail client with a prefilled message
-  if (form){
+  if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       statusEl.textContent = '';
@@ -35,17 +35,17 @@
       const topic = String(data.get('topic') || '').trim();
       const message = String(data.get('message') || '').trim();
 
-      if (!name || !email || !topic || !message){
+      if (!name || !email || !topic || !message) {
         statusEl.textContent = 'Please complete all fields.';
         return;
       }
 
       // Change this to your preferred intake address
-      const to = 'ITeam@E911News.com';
+      const to = 'I-Team@E911News.com';
 
       const subject = `[E911 News] ${topic.toUpperCase()} — from ${name}`;
       const body =
-`Name: ${name}
+        `Name: ${name}
 Email: ${email}
 Topic: ${topic}
 
